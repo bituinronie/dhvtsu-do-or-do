@@ -81,7 +81,7 @@ public class MainMenuScript : MonoBehaviour
             quitText.text = "Quit";
             playerNameConfirmText.text = "Confirm";
             playerNamePlaceHolderText.text = "Your Name";
-            }
+        }
         else{
             homeScreenText.text = "Pumindot kahit saan para mag simula";
             newGameText.text = "Panibagong Laro";
