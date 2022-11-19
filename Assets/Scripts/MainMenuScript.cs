@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject languageSelectionScreen, mainMenuScreen, menuOptionsScreen, quitScreen, playerNameScreen, levelSelectionScreen, proceedText;
-    public Text playerName, homeScreenText, newGameText, loadGameText, quitText, playerNameConfirmText, playerNamePlaceHolderText;
+    public GameObject languageSelectionScreen, mainMenuScreen, menuOptionsScreen, quitScreen, playerNameScreen, levelSelectionScreen, proceedText, selectCharacterScreen;
+    public Text playerName, homeScreenText, newGameText, loadGameText, quitText, playerNameConfirmText, playerNamePlaceHolderText, selectCharacterText;
     public AudioSource clickSound;
 
     public string language  = "english";
@@ -36,13 +36,50 @@ public class MainMenuScript : MonoBehaviour
         HideAllScreen();
         playerNameScreen.SetActive(true);
         clickSound.Play();
+        PlayerPrefs.SetString("questionCorrect", "1");
     }
 
     //Confirm New Game
     public void ConfirmNewGame(){
+        HideAllScreen();
+        selectCharacterScreen.SetActive(true);
+        clickSound.Play();
+        // SceneManager.LoadScene("Map1");
+    }
+
+    //Select Characters Here
+    public void SelectCharacter(){
         clickSound.Play();
         SceneManager.LoadScene("Map1");
     }
+
+    //Character Male
+    public void SelectCharacterMale1(){
+        PlayerPrefs.SetString("playerCharacter", "maleCharacter1");
+        clickSound.Play();
+        SceneManager.LoadScene("Map1");
+    }
+
+    public void SelectCharacterMale2(){
+        PlayerPrefs.SetString("playerCharacter", "maleCharacter2");
+        clickSound.Play();
+        SceneManager.LoadScene("Map1");
+    }
+
+    public void SelectCharacterFemale1(){
+        PlayerPrefs.SetString("playerCharacter", "femaleCharacter1");
+        clickSound.Play();
+        SceneManager.LoadScene("Map1");
+    }
+
+    public void SelectCharacterFemale2(){
+        PlayerPrefs.SetString("playerCharacter", "femaleCharacter2");
+        clickSound.Play();
+        SceneManager.LoadScene("Map1");
+    }
+
+
+
 
     //Hide All Screen
     public void HideAllScreen(){
@@ -51,6 +88,7 @@ public class MainMenuScript : MonoBehaviour
         menuOptionsScreen.SetActive(false);
         // quitScreen.SetActive(false);
         playerNameScreen.SetActive(false);
+        selectCharacterScreen.SetActive(false);
         // levelSelectionScreen.SetActive(false);
         // proceedText.SetActive(false);
     }
@@ -81,6 +119,7 @@ public class MainMenuScript : MonoBehaviour
             quitText.text = "Quit";
             playerNameConfirmText.text = "Confirm";
             playerNamePlaceHolderText.text = "Your Name";
+            selectCharacterText.text = "Press the desired character";
         }
         else{
             homeScreenText.text = "Pumindot kahit saan para mag simula";
@@ -89,7 +128,7 @@ public class MainMenuScript : MonoBehaviour
             quitText.text = "Isara ang Laro";
             playerNameConfirmText.text = "Ikumpirma";
             playerNamePlaceHolderText.text = "And Iyong Pangalan";
-
+            selectCharacterText.text = "Pindutin ang karakter na natipuhan";
         }
     }
 }
