@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Map_1 : MonoBehaviour
 {
-    public GameObject question1Screen, question2Screen, question3Screen, question4Screen;
+    public GameObject question1Screen, question2Screen, question3Screen, question4Screen, question5Screen, question6Screen, question7Screen, question8Screen, question9Screen;
+
+    public Text scoreText;
+
     // For Question 1
     public Text question1Text, choice1AText, choice1BText;
 
@@ -19,8 +22,25 @@ public class Map_1 : MonoBehaviour
     // For Question 4
     public Text question4Text, choice4AText, choice4BText;
 
+    // For Question 5
+    public Text question5Text, choice5AText, choice5BText;
+
+    // For Question 6
+    public Text question6Text, choice6AText, choice6BText;
+
+    // For Question 7
+    public Text question7Text, choice7AText, choice7BText;
+
+    // For Question 8
+    public Text question8Text, choice8AText, choice8BText;
+
+    // For Question 9
+    public Text question9Text, choice9AText, choice9BText;
+
     string language;
     public AudioSource rightSound, wrongSound;
+
+    int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +48,9 @@ public class Map_1 : MonoBehaviour
         language = PlayerPrefs.GetString("playerLanguage");
         LoadLanguageText();
         question1Screen.SetActive(true);
+
+        score = PlayerPrefs.GetInt("playerScore");
+        scoreText.text = "Points: "+score;
     }
 
     // Update is called once per frame
@@ -42,6 +65,9 @@ public class Map_1 : MonoBehaviour
         rightSound.Play();
         question2Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "1");
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
     }
 
     public void question1Choice2(){
@@ -57,6 +83,9 @@ public class Map_1 : MonoBehaviour
         rightSound.Play();
         question3Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "1");
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
     }
 
     public void question2Choice2(){
@@ -79,28 +108,131 @@ public class Map_1 : MonoBehaviour
         HideAllScreen();
         rightSound.Play();
         question4Screen.SetActive(true);
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
     }
 
     //Choices for Question 4
     public void question4Choice1(){
         PlayerPrefs.SetString("questionCorrect", "2");
-        // HideAllScreen();
+        HideAllScreen();
         wrongSound.Play();
-        // question4Screen.SetActive(true);
+        question5Screen.SetActive(true);
     }
 
     public void question4Choice2(){
         PlayerPrefs.SetString("questionCorrect", "1");
+        HideAllScreen();
+        rightSound.Play();
+        question5Screen.SetActive(true);
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+    }
+    
+    //Quesetion 5
+    public void question5Choice1(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        HideAllScreen();
+        wrongSound.Play();
+        question6Screen.SetActive(true);
+    }
+
+    public void question5Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "1");
+        HideAllScreen();
+        rightSound.Play();
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+        question6Screen.SetActive(true);
+    }
+
+    //Question 6
+    public void question6Choice1(){
+        PlayerPrefs.SetString("questionCorrect", "1");
+        HideAllScreen();
+        rightSound.Play();
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+        question7Screen.SetActive(true);
+
+    }
+
+    public void question6Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        HideAllScreen();
+        wrongSound.Play();
+        question7Screen.SetActive(true);
+    }
+
+    //Question 7
+    public void question7Choice1(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        HideAllScreen();
+        wrongSound.Play();
+        question8Screen.SetActive(true);
+    }
+
+    public void question7Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "1");
+        HideAllScreen();
+        rightSound.Play();
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+        question8Screen.SetActive(true);
+    }
+
+    //Question 8
+    public void question8Choice1(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        HideAllScreen();
+        wrongSound.Play();
+        question9Screen.SetActive(true);
+    }
+
+    public void question8Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "1");
+        HideAllScreen();
+        rightSound.Play();
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+        question9Screen.SetActive(true);
+    }
+
+    //Question 9
+    public void question9Choice1(){
+        PlayerPrefs.SetString("questionCorrect", "1");
         // HideAllScreen();
         rightSound.Play();
-        // question4Screen.SetActive(true);
+        score++;
+        PlayerPrefs.SetInt("playerScore", score);
+        scoreText.text = "Points: "+score;
+        // question9Screen.SetActive(true);
     }
+
+    public void question9Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        // HideAllScreen();
+        wrongSound.Play();
+        // question9Screen.SetActive(true);
+    }
+
+
 
     public void HideAllScreen(){
         question1Screen.SetActive(false);
         question2Screen.SetActive(false);
         question3Screen.SetActive(false);
         question4Screen.SetActive(false);
+        question5Screen.SetActive(false);
+        question6Screen.SetActive(false);
+        question7Screen.SetActive(false);
+        question8Screen.SetActive(false);
     }
 
     //Load Language Text
@@ -120,8 +252,27 @@ public class Map_1 : MonoBehaviour
 
             question4Text.text = "Your mother is busy doing the house chores while you are busy playing on your phone, she asked you to buy seasonings. What do you think is the right response?";
             choice4AText.text = "A. You will grumble because you are busy playing on your phone.";
-            choice4BText.text = "B. You will leave for a while your game and obey your mother.";            
+            choice4BText.text = "B. You will leave for a while your game and obey your mother.";           
 
+            question5Text.text = "You found your father's wallet in his laundry, what will you do?";
+            choice5AText.text = "A. Take it and keep it.";
+            choice5BText.text = "B. Give it to father.";  
+
+            question6Text.text = "You dropped your mother's expensive plates what are you going to do?";
+            choice6AText.text = "A. Admit it and say it wasn't intentional.";
+            choice6BText.text = "B. Don't admit it and blame it on other housemates.";    
+
+            question7Text.text = "You are the one assigned to clean your classroom with your classmates but one of your classmates suddenly asked you to go home, what do you do?";
+            choice7AText.text = "A. You just go with him so you don't get tired.";
+            choice7BText.text = "B. Do it wholeheartedly to be fair to your other classmates.";     
+
+            question8Text.text = "Your father told you to wake him up when its already time, what do you do?";
+            choice8AText.text = "A. Don't pay attention to what he says and let it go.";
+            choice8BText.text = "B. Wake him up at the time he said because what he will do is important.";    
+
+            question9Text.text = "Your mother asks you to water the plants but you are busy watching TV, what would you do?";
+            choice9AText.text = "A. Obey your mother instantly.";
+            choice9BText.text = "B. Pretend that you didn't hear anything and continue watching.";                         
 
         }
         else{
@@ -139,7 +290,27 @@ public class Map_1 : MonoBehaviour
 
             question4Text.text = "Abalang gumagawa ng gawaing bahay ang iyong ina habang ikaw ay naglalaro sa iyong cellphone (PA-ITALIC PO ANG CELLPHONE. Tinawag ka niya upang bumili ng mga sangkap para sa kaniyang lulutuing tanghalian. Ano sa tingin mo ang wastong tugon?";
             choice4AText.text = "A. Magdabog dahil ikaw ay abala sa iyong laro.";
-            choice4BText.text = "B. Iwan muna ang laro at sumunod sa utos ng iyong ina.";                 
+            choice4BText.text = "B. Iwan muna ang laro at sumunod sa utos ng iyong ina.";     
+
+            question5Text.text = "Nakita mo ang wallet nang ama mo sa knayang labahan na damit, ano ang iyong gagawin?";
+            choice5AText.text = "A. Kunin ito at itago nalang.";
+            choice5BText.text = "B. Ibigay ito sa ama.";                             
+
+            question6Text.text = "Nahulog mo ang mga mamahaling plato na iyong nanay ano ang iyong gagawin?";
+            choice6AText.text = "A. Umamin at sabihing hindi naman ito sinadya.";
+            choice6BText.text = "B. Huwag umamin at ibintang ito sa mga ibang kasama mo sa bahay.";  
+
+            question7Text.text = "Ikaw ang inatasan ng maglinis ng inyong silid aralan kasama ang iyong mga kaklasi ngunit, isa sa mga kaklasi mo ay biglang nagyayang umuwi nalang ako ang iyong gagawin?";
+            choice7AText.text = "A. Ikaw ay sumama nalang sakanya para hindi mapagod.";
+            choice7BText.text = "B. Gawin ito ng buong puso upang maging patas sa iba mong kaklase.";  
+
+            question8Text.text = "Sinabi ng iyong tatay na gisingin siya sa oras na sinabi niya sayo ano ang iyong gagawin?";
+            choice8AText.text = "A. Huwag bigyan ng pansin ang kanyang sabihin at hayaan.";
+            choice8BText.text = "B. Gisingin siya sa oras na sinabi niya dahil importante ang kanyang gagawin .";  
+
+            question9Text.text = "Inutusan ka ng iyong ina na magdilig ng halaman ngunit ikaw ay nanonood ng telebisyon, ano ang iyong gagawin?";
+            choice9AText.text = "A. Gawin agad ang utos.";
+            choice9BText.text = "B. Magpanggap na walang narinig at magpatuloy sa panonood.";     
 
         }        
     }

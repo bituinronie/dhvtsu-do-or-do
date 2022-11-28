@@ -1937,7 +1937,7 @@ MonoBehaviour:
   levelSelectionScreen: {fileID: 0}
   proceedText: {fileID: 0}
   selectCharacterScreen: {fileID: 451329351}
-  playerName: {fileID: 0}
+  playerName: {fileID: 258595058}
   homeScreenText: {fileID: 1380169574}
   newGameText: {fileID: 1569770191}
   loadGameText: {fileID: 527126243}

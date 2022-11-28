@@ -37,6 +37,7 @@ public class MainMenuScript : MonoBehaviour
         playerNameScreen.SetActive(true);
         clickSound.Play();
         PlayerPrefs.SetString("questionCorrect", "1");
+        PlayerPrefs.SetInt("playerScore", 0);
     }
 
     //Confirm New Game
@@ -44,6 +45,9 @@ public class MainMenuScript : MonoBehaviour
         HideAllScreen();
         selectCharacterScreen.SetActive(true);
         clickSound.Play();
+        string _playerName = playerName.text;
+        PlayerPrefs.SetString("playerName", _playerName);
+        Debug.Log(PlayerPrefs.GetString("playerName"));
         // SceneManager.LoadScene("Map1");
     }
 
