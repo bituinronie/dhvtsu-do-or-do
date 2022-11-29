@@ -527,8 +527,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question1Choice1
         m_Mode: 1
         m_Arguments:
@@ -661,8 +661,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question6Choice1
         m_Mode: 1
         m_Arguments:
@@ -1391,9 +1391,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
-        m_MethodName: question9Choice1
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
+        m_MethodName: question10Choice1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2108,8 +2108,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question4Choice2
         m_Mode: 1
         m_Arguments:
@@ -2441,8 +2441,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question3Choice1
         m_Mode: 1
         m_Arguments:
@@ -2815,9 +2815,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
-        m_MethodName: question9Choice2
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
+        m_MethodName: question10Choice2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3080,7 +3080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: cfb386ea105234c0ebd99e8d0ad486ba, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4cf832147e9d646c0b41fe2c648e7c85, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3263,8 +3263,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question2Choice1
         m_Mode: 1
         m_Arguments:
@@ -3553,8 +3553,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question7Choice1
         m_Mode: 1
         m_Arguments:
@@ -3612,7 +3612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986478005}
-  - component: {fileID: 986478007}
+  - component: {fileID: 986478009}
   - component: {fileID: 986478008}
   m_Layer: 0
   m_Name: ScriptController
@@ -3636,7 +3636,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &986478007
+--- !u!114 &986478008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3645,7 +3645,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 986478004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8977d0ee15843c8a67d80dd90d53d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d37fcc68a18a4988a7493b7b6c50bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacter: 
+  questionCorrect: 
+  characterMale1Happy: {fileID: 152078194}
+  characterMale1Sad: {fileID: 301309550}
+  characterMale2Happy: {fileID: 1961027247}
+  characterMale2Sad: {fileID: 1318737653}
+  characterFemale1Happy: {fileID: 1757987654}
+  characterFemale1Sad: {fileID: 268773680}
+  characterFemale2Happy: {fileID: 888930333}
+  characterFemale2Sad: {fileID: 452672719}
+--- !u!114 &986478009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986478004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c6f587b6ab64eb28be8eb5fb8087c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   question1Screen: {fileID: 1473605983}
@@ -3672,10 +3694,10 @@ MonoBehaviour:
   choice4AText: {fileID: 1626703788}
   choice4BText: {fileID: 1500675328}
   question5Text: {fileID: 615791022}
-  choice5AText: {fileID: 1691643393}
+  choice5AText: {fileID: 615791022}
   choice5BText: {fileID: 636097024}
   question6Text: {fileID: 991589298}
-  choice6AText: {fileID: 1015445067}
+  choice6AText: {fileID: 991589298}
   choice6BText: {fileID: 1517106896}
   question7Text: {fileID: 626604126}
   choice7AText: {fileID: 671446020}
@@ -3691,28 +3713,7 @@ MonoBehaviour:
   choice10BText: {fileID: 61053826}
   rightSound: {fileID: 1649296714}
   wrongSound: {fileID: 383362864}
---- !u!114 &986478008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986478004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d37fcc68a18a4988a7493b7b6c50bd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCharacter: 
-  questionCorrect: 
-  characterMale1Happy: {fileID: 152078194}
-  characterMale1Sad: {fileID: 301309550}
-  characterMale2Happy: {fileID: 1961027247}
-  characterMale2Sad: {fileID: 1318737653}
-  characterFemale1Happy: {fileID: 1757987654}
-  characterFemale1Sad: {fileID: 268773680}
-  characterFemale2Happy: {fileID: 888930333}
-  characterFemale2Sad: {fileID: 452672719}
+  whichMap: Map3
 --- !u!1 &991589296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,8 +4078,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question2Choice2
         m_Mode: 1
         m_Arguments:
@@ -4483,8 +4484,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question5Choice1
         m_Mode: 1
         m_Arguments:
@@ -4855,8 +4856,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question6Choice2
         m_Mode: 1
         m_Arguments:
@@ -5229,8 +5230,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question9Choice2
         m_Mode: 1
         m_Arguments:
@@ -5363,8 +5364,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question1Choice2
         m_Mode: 1
         m_Arguments:
@@ -5862,8 +5863,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question9Choice1
         m_Mode: 1
         m_Arguments:
@@ -6541,8 +6542,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question4Choice1
         m_Mode: 1
         m_Arguments:
@@ -6872,8 +6873,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question8Choice2
         m_Mode: 1
         m_Arguments:
@@ -7392,8 +7393,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question7Choice2
         m_Mode: 1
         m_Arguments:
@@ -7606,8 +7607,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question3Choice2
         m_Mode: 1
         m_Arguments:
@@ -7740,8 +7741,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question5Choice2
         m_Mode: 1
         m_Arguments:
@@ -7874,8 +7875,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986478007}
-        m_TargetAssemblyTypeName: Map_1, Assembly-CSharp
+      - m_Target: {fileID: 986478009}
+        m_TargetAssemblyTypeName: Map_2, Assembly-CSharp
         m_MethodName: question8Choice1
         m_Mode: 1
         m_Arguments:

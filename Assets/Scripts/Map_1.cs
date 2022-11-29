@@ -43,6 +43,8 @@ public class Map_1 : MonoBehaviour
     string language;
     public AudioSource rightSound, wrongSound;
 
+    public string whichMap;
+
     int score;
     // Start is called before the first frame update
     void Start()
@@ -230,7 +232,7 @@ public class Map_1 : MonoBehaviour
         PlayerPrefs.SetString("questionCorrect", "2");
         // HideAllScreen();
         wrongSound.Play();
-        // question10Screen.SetActive(true);
+        SceneManager.LoadScene(whichMap);
     }
 
     public void question10Choice2(){
@@ -240,7 +242,7 @@ public class Map_1 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
-        // question10Screen.SetActive(true);
+        SceneManager.LoadScene(whichMap);
     }
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Map_2 : MonoBehaviour
+public class Map_3 : MonoBehaviour
 {
     public GameObject question1Screen, question2Screen, question3Screen, question4Screen, question5Screen, question6Screen, question7Screen, question8Screen, question9Screen, question10Screen;
 
@@ -44,6 +44,8 @@ public class Map_2 : MonoBehaviour
     public AudioSource rightSound, wrongSound;
 
     public string whichMap;
+
+    public GameObject bg1, bg2, bg3;
 
     int score;
     // Start is called before the first frame update
@@ -88,6 +90,8 @@ public class Map_2 : MonoBehaviour
         wrongSound.Play();
         question3Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "2");
+        HideBG();
+        bg2.SetActive(true);
     }
 
     public void question2Choice2(){
@@ -98,6 +102,8 @@ public class Map_2 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+        HideBG();
+        bg2.SetActive(true);
     }
 
     //Choices for Question 3
@@ -109,6 +115,8 @@ public class Map_2 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+        HideBG();
+        bg3.SetActive(true);
     }
 
     public void question3Choice2(){
@@ -116,6 +124,8 @@ public class Map_2 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question4Screen.SetActive(true);
+        HideBG();
+        bg3.SetActive(true);
     }
 
     //Choices for Question 4
@@ -229,17 +239,17 @@ public class Map_2 : MonoBehaviour
 
     //Question 10
     public void question10Choice1(){
-        PlayerPrefs.SetString("questionCorrect", "2");
-        wrongSound.Play();
-        SceneManager.LoadScene(whichMap);
-    }
-
-    public void question10Choice2(){
         PlayerPrefs.SetString("questionCorrect", "1");
         rightSound.Play();
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+        SceneManager.LoadScene(whichMap);
+    }
+
+    public void question10Choice2(){
+        PlayerPrefs.SetString("questionCorrect", "2");
+        wrongSound.Play();
         SceneManager.LoadScene(whichMap);
     }
 
@@ -262,91 +272,99 @@ public class Map_2 : MonoBehaviour
     //Load Language Text
     public void LoadLanguageText(){
         if(language == "english"){
-            question1Text.text = "You saw children’s taking your neighbor's guavas without saying goodbye, what should you do?";
-            choice1AText.text = "A. Ask for their extracted guava.";
-            choice1BText.text = "B. Scold the children because it is trespassing.";
+            question1Text.text = "You are inside the church, what are you going to do?";
+            choice1AText.text = "A. Make noise and chat with friends.";
+            choice1BText.text = "B. Pray and listen to the priest's sermon.";
 
-            question2Text.text = "Your mother ordered you to feed your guard dog immediately because you will be home at night, what will you do?";
-            choice2AText.text = "A. Will not do.";
-            choice2BText.text = "B. Feed it so it doesn't starve.";
+            question2Text.text = "You saw your friends not singing the song offered to God correctly, what will you do?";
+            choice2AText.text = "A. Copy it because it looks fun.";
+            choice2BText.text = "B. Reprimanding after mass to never do it again.";
 
-            question3Text.text = "You went to the forest with your family to go camping but you saw an old man who was hungry and needed help what would you do?";
-            choice3AText.text = "A. Help and give food.";
-            choice3BText.text = "B. Let it be.";            
+            question3Text.text = "You know that every Sunday you and your family go to church, unfortunately you have another agenda on that day. What will you do?";
+            choice3AText.text = "A. Set-aside your agenda and attend the Sunday service.";
+            choice3BText.text = "B. You will continue to your agenda and will not attend church";            
 
-            question4Text.text = "Your friends invite you to pick fruit from your neighbor's empty lot but there is a warning that you are not allowed to enter what do you do?";
-            choice4AText.text = "A. Enter the lot even after seeing the warning.";
-            choice4BText.text = "B. Ask your friends to leave as entry is forbidden.";           
+            question4Text.text = "You are sitting in a waiting shed while waiting for public transport, there is an old man also waiting and standing besides you, what will you going to do?";
+            choice4AText.text = "A. Ignore the old man who is standing and just sit down.";
+            choice4BText.text = "B. Give your seat to the old man.";           
 
-            question5Text.text = "You see the children writing on your neighbor's wall what is good to do?";
-            choice5AText.text = "A. Scold them and say it's a type of crime.";
-            choice5BText.text = "B. Let them go because the house they are writing about is not yours.";  
+            question5Text.text = "You are riding in a public transportation on your way home from school while resting, someone is handing out their fare to the driver, what are you going to do?";
+            choice5AText.text = "A. Hand over the fare to the driver.";
+            choice5BText.text = "B. Pretend you did not to hear anything and lean back.";  
 
-            question6Text.text = "You notice your pet pigs haven't eaten yet what are you going to do?";
-            choice6AText.text = "A. Feed them because they will surely die.";
-            choice6BText.text = "B. Leave them alone because it was not ordered to you.";    
+            question6Text.text = "While walking you meet a beggar who wants to ask you for food, what will you do?";
+            choice6AText.text = "A. You will give the beggar a food.";
+            choice6BText.text = "B. Ignore and just pass by.";    
 
-            question7Text.text = "You see your yard is dirty and full of trash, what are you going to do?";
-            choice7AText.text = "A. Let it get dirty.";
-            choice7BText.text = "B. Clean and place in proper trash.";     
+            question7Text.text = "You are walking down the street with your friends and you see an old man walking and his groceries has spilled, what will you do?";
+            choice7AText.text = "A. Ignore what was seen and walk with friends.";
+            choice7BText.text = "B. Stop walking and help the old man.";     
 
-            question8Text.text = "Your father told you to wake him up when its already time, what do you do?";
-            choice8AText.text = "A. Don't pay attention to what he says and let it go.";
-            choice8BText.text = "B. Wake him up at the time he said because what he will do is important.";    
+            question8Text.text = "You are on your way home from school and you are about to cross the other road but there are many cars passing by, what will you do?";
+            choice8AText.text = "A. Cross the right crosswalk.";
+            choice8BText.text = "B. Cross casually.";    
 
-            question9Text.text = "You ordered from food panda but the change given by the delivery boy is too much what are you going to do?";
-            choice9AText.text = "A. Give him the change before he leaves.";
-            choice9BText.text = "B. Don't say it and let him leave so that the change goes to you.";          
+            question9Text.text = "You see an old man and a child on the road going to school to drop off the child but the cars don't stop, what can be done?";
+            choice9AText.text = "A. Help it to cross safely.";
+            choice9BText.text = "B. Let it go because you are in a hurry to go home.";          
 
-            question10Text.text = "You remember that you have an exam in your school but you are already in bed and ready to sleep what are you going to do?";
-            choice10AText.text = "A. Just sleep and hope to copy tomorrow.";
-            choice10BText.text = "B. Read and review to get high marks.";          
+            question10Text.text = "You hear a passenger where he needs to come down but he fell asleep and you hear that your public transportation has arrived at his destination, what is the best thing to do?";
+            choice10AText.text = "A. Wake up the passenger so he doesn't get too far from his destination.";
+            choice10BText.text = "B. Just let the passenger pass to his destination and don't wake him up.";          
 
 
         }
         else{
-            question1Text.text = "May nakita kang mga bata na kumukuha ng bayabas ng inyong kapitbahay na walang paalam, ano ang dapat mong gawin?";
-            choice1AText.text = "A. Manghingi ng kanilang nakuhang bayabas.";
-            choice1BText.text = "B. Suyawin ang mga bata dahil ito ay trespassing.";
+            question1Text.text = "Ikaw ay nasa loob ng simbahan, ano ang iyong gagawin?";
+            choice1AText.text = "A. Mag-iingay at makikipagkwentuhan sa katabi.";
+            choice1BText.text = "B. Magdasal at makinig sa sermon ng pari.";
 
-            question2Text.text = "Binilin ng iyong ina na pakainin agad ang inyong bantay na aso dahil ikaw ay gagabihin sa iyong lakad ano ang iyong gagawin?";
-            choice2AText.text = "A. Ipag paliban";
-            choice2BText.text = "B. Pakainin para hindi ito magutom";
+            question2Text.text = "Nakikita mo ang iyong mga kaibigan na hindi kinakantang tama ang kantang hinahandog sa Diyos ano ang iyong gagawin?";
+            choice2AText.text = "A. Gayahin ito dahil ito ay mukhang masaya";
+            choice2BText.text = "B. Pagsabihan pagkatapos ng misa para hindi na ito gawin kailan man";
 
-            question3Text.text = "Nag punta kayo sa gubat ng iyong pamilya para mag camping subalit may nakita kayong matanda na nagugutom at nangangailangan nang tulong ano ang iyong gagawin?";
-            choice3AText.text = "A. Tulungan at bigyan nang pagkain";
-            choice3BText.text = "B. Hayaan nalang";     
+            question3Text.text = "Araw ng linggo at alam mong kayo ay nagsisimba kasama ng iyong pamilya, ngunit naalala mong may ibang lakad ka pala na pupuntahan, ano ang iyong gagawin?";
+            choice3AText.text = "A. Isasantabi muna ang lakad at sasama sa pagsimba";
+            choice3BText.text = "B. Pupunta sa lakad at hindi magsisimba";     
 
-            question4Text.text = "Niyayaya ka ng iyong tropa na kumuha ng prutas sa bakanting lote ng inyong kapit bahay ngunit may nakalagay na babala na bawal pumasok ano ang iyong gagawin?";
-            choice4AText.text = "A. Pumasok parin sa lote kahit nakita na ang babala.";
-            choice4BText.text = "B. Yayain ang iyong tropa na umalis dahil bawal pumasok.";     
+            question4Text.text = "Ikaw ay nakaupo sa isang waiting shed at naghihintay ng pampublikong sasakyan, may isang matanda na naghihintay din at nakatayo, ano ang iyong gagawin?";
+            choice4AText.text = "A. Babalewalain ang matanda na nakatayo at uupo nang tuluyan.";
+            choice4BText.text = "B. Tatayo at pauupuin ang matanda.";     
 
-            question5Text.text = "Nakita mo ang mga bata na nagsusulat sa pader ng iyong kapitbahay ano ang magadang gawin?";
-            choice5AText.text = "A. Bawalan at sabihin na ito ay isang klasi ng krimen.";
-            choice5BText.text = "B. Hayaan sila dahil hindi naman sainyo ang bahay na sinusulatan.";                             
+            question5Text.text = "Ikaw ay nakasakay sa isang pampublikong sasakyan habang ikaw ay nakasandal pagod galing eskwela at may nagpapaabot ng pamasahe sa driver, ano ang iyong gagawin?";
+            choice5AText.text = "A. Aabot ang pamasahe sa driver.";
+            choice5BText.text = "B. Magpapanggap ng walang narinig at sasandal nalang.";                             
 
-            question6Text.text = "Napansin mo ang inyong mga alagang baboy na hindi pa kumakain ano ang iyong gagawin?";
-            choice6AText.text = "A. Pakainin ang mga ito dahil pusbiling sila aymamatay.";
-            choice6BText.text = "B. Pabayaan sila dahil hindi naman ito inutos sayo.";  
+            question6Text.text = "Habang naglalakad mayroon kang nakasalubong na pulubi at gustong humingi sa iyo ng pakain, ano ang iyong gagawin? ?";
+            choice6AText.text = "A. Bibigyan nang pagkain.";
+            choice6BText.text = "B. Babalewalain at dadaanan lang.";  
 
-            question7Text.text = "Nakita mo ang inyong bakuran na marumi at maraming basura, ano ang iyong gagawin?";
-            choice7AText.text = "A. Hayaan nalang na marumi ito.";
-            choice7BText.text = "B. Linisin at ilagay sa tamang basurahan.";  
+            question7Text.text = "Ikaw ay naglalakad sa daan kasama ang iyong mga kaibigan at may nakita kang isang matanda na naglalakad at nahulog ang kanyang mga pinamiling gamit, ano ang iyong gagawin?";
+            choice7AText.text = "A. Babalewalain ang nakita at sasabay sa paglalakad ng mga kaibigan.";
+            choice7BText.text = "B. Hihinto sa paglalakad at tutulungin ang matanda.";  
 
-            question8Text.text = "Napansin mo na ang faucet ng inyong kapit bahay sa labas ay bukas ano ang nararapat mong gawin?";
-            choice8AText.text = "A. Tumawag sa iyong kapitbahay at sabihin ito .";
-            choice8BText.text = "B. Huwag itong sabihin at hayaang umapaw ang tubig sa kanilang harapan.";  
+            question8Text.text = "Ikaw ay nasa daan pauwi galing paaralan at tatawid sa kabilang daanan ngunit maraming sasakyan ang dumadaan, ano ang iyong gagawin?";
+            choice8AText.text = "A. Tumawid sa tamang tawiran.";
+            choice8BText.text = "B. Tumawid ng basta-basta.";  
 
-            question9Text.text = "Umalis ang iyong ina para mamili ng makakain at ikaw ay pinagbilinan na maglinis ng bahay ngunit ikaw ay nakatulog at hindi nagawa ang pinagagawa ng iyong ina. Pagkauwi ng iyong ina ay hindi pa rin malinis ang bahay , ano ang iyong sasabihin??";
-            choice9AText.text = "A. Ibigay sakanya ang sukli habang hindi pa siya nakakaalis.";
-            choice9BText.text = "B. Huwag itong sabihin at hayaan nalang umalis upang sayo nalang mapunta ang sukli.";
+            question9Text.text = "May nakita kang matanda at bata sa kalsada papunta sa skwelahan para ihatid ang bata ngunit walang hinto ang mga sasakyan, ano ang pweding gawin?";
+            choice9AText.text = "A. Tulungan ito para makatawid ng ligtas.";
+            choice9BText.text = "B. Hayaan nalang ito dahil nagmamadali ka papuntang bahay.";
 
 
-            question10Text.text = "Naalala mong magkakaroon pala kayo ng pagsusulit sa inyong paaralan ngunit ikaw ay nakahiga na at handa ng matulog ano ang iyong gagawin?";
-            choice10AText.text = "A. Matulog nalang at umasang makakopya bukas.";
-            choice10BText.text = "B. Magbasa at magrebyu upang makakuha ng mataas ng marka.";     
+            question10Text.text = "Narinig mo ang isang pasahero kung saan siya ay baba ngunit siya ay nakatulog at narinig mona na nakarating na ang inyong sasakyan sa kanyang destinasyon ano ang maganda gawin?";
+            choice10AText.text = "A. Gisingin ang pasahero para hindi na mapalayo sa kanyang pupuntahan.";
+            choice10BText.text = "B. Hayaan nalang na lumagpas ang pasahero at wag nang gisingin.";     
 
  
         }        
+    }
+
+
+    //hide all bg
+    public void HideBG(){
+        bg1.SetActive(false);
+        bg2.SetActive(false);
+        bg3.SetActive(false);
     }
 }
