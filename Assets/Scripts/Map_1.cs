@@ -46,6 +46,11 @@ public class Map_1 : MonoBehaviour
     public string whichMap;
 
     int score;
+
+    //Great Job
+    public GameObject wrongAnswerPanel, correctAnswerPanel;
+    public Text correctText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +78,10 @@ public class Map_1 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     public void question1Choice2(){
@@ -80,6 +89,20 @@ public class Map_1 : MonoBehaviour
         wrongSound.Play();
         question2Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "2");
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Do the work wholeheartedly";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Susunod ng buong puso";
+        }
+        //End Correct and Wrong Panel
     }
 
     //Choices for Question 2
@@ -91,6 +114,10 @@ public class Map_1 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     public void question2Choice2(){
@@ -98,6 +125,21 @@ public class Map_1 : MonoBehaviour
         wrongSound.Play();
         question3Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "2");
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Get the money and bring it back to your father.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Kukunin ang pera at ibibigay sa Ama.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
     //Choices for Question 3
@@ -106,6 +148,21 @@ public class Map_1 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question4Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"You will make a coffee.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Magtitimpla ng kape.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
     public void question3Choice2(){
@@ -116,6 +173,11 @@ public class Map_1 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
+
     }
 
     //Choices for Question 4
@@ -347,5 +409,12 @@ public class Map_1 : MonoBehaviour
             choice10AText.text = "A. Magsinungaling at sabihing masama ang pakiramdam.";
             choice10BText.text = "B. Umamin na ikaw ay nakatulog at humingi ng tawad."; 
         }        
+    }
+
+    //Hide Great and Sorry Panel
+    public void HideCorrectAndSorryPanel()
+    {
+        wrongAnswerPanel.SetActive(false);
+        correctAnswerPanel.SetActive(false);
     }
 }
