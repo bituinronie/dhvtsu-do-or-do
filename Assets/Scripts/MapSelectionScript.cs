@@ -29,4 +29,9 @@ public class MapSelectionScript : MonoBehaviour
         SceneManager.LoadScene("Map3");
     }
 
+
+    public void petShopScene(){
+        SceneManager.LoadScene("PetShop");
+    }
+
 }
