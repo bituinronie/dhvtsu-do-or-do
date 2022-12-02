@@ -48,6 +48,11 @@ public class Map_3 : MonoBehaviour
     public GameObject bg1, bg2, bg3;
 
     int score;
+
+    //Great Job
+    public GameObject wrongAnswerPanel, correctAnswerPanel;
+    public Text correctText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +77,20 @@ public class Map_3 : MonoBehaviour
         wrongSound.Play();
         question2Screen.SetActive(true);
         PlayerPrefs.SetString("questionCorrect", "2");
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Pray and listen to the priest's sermon.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Magdasal at makinig sa sermon ng pari";
+        }
+        //End Correct and Wrong Panel    
     }
 
     public void question1Choice2(){
@@ -82,6 +101,10 @@ public class Map_3 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     //Choices for Question 2
@@ -92,6 +115,21 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetString("questionCorrect", "2");
         HideBG();
         bg2.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Reprimanding after mass to never do it again.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Pagsabihan pagkatapos ng misa para hindi na ito gawin kailan man.";
+        }
+        //End Correct and Wrong Panel    
+
     }
 
     public void question2Choice2(){
@@ -104,6 +142,10 @@ public class Map_3 : MonoBehaviour
         scoreText.text = "Points: "+score;
         HideBG();
         bg2.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     //Choices for Question 3
@@ -117,6 +159,11 @@ public class Map_3 : MonoBehaviour
         scoreText.text = "Points: "+score;
         HideBG();
         bg3.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
+
     }
 
     public void question3Choice2(){
@@ -126,6 +173,21 @@ public class Map_3 : MonoBehaviour
         question4Screen.SetActive(true);
         HideBG();
         bg3.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Set-aside your agenda and attend the Sunday service.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Babalewalain ang matanda na nakatayo at uupo nang tuluyan.";
+        }
+        //End Correct and Wrong Panel   
+
     }
 
     //Choices for Question 4
@@ -134,6 +196,21 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question5Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Give your seat to the old man.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Tatayo at pauupuin ang matanda.";
+        }
+        //End Correct and Wrong Panel   
+
     }
 
     public void question4Choice2(){
@@ -144,6 +221,11 @@ public class Map_3 : MonoBehaviour
         score++;
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
+
     }
     
     //Quesetion 5
@@ -155,6 +237,10 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
         question6Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     public void question5Choice2(){
@@ -162,6 +248,20 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question6Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Hand over the fare to the driver.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Aabot ang pamasahe sa driver.";
+        }
+        //End Correct and Wrong Panel  
     }
 
     //Question 6
@@ -174,6 +274,9 @@ public class Map_3 : MonoBehaviour
         scoreText.text = "Points: "+score;
         question7Screen.SetActive(true);
 
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     public void question6Choice2(){
@@ -181,6 +284,21 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question7Screen.SetActive(true);
+
+       //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"You will give the beggar a food.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Bibigyan nang pagkain.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
     //Question 7
@@ -189,6 +307,20 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question8Screen.SetActive(true);
+
+       //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Stop walking and help the old man.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Hihinto sa paglalakad at tutulungin ang matanda.";
+        }
+        //End Correct and Wrong Panel
     }
 
     public void question7Choice2(){
@@ -199,6 +331,10 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
         question8Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     //Question 8
@@ -210,6 +346,10 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
         question9Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
     }
 
     public void question8Choice2(){
@@ -217,6 +357,21 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question9Screen.SetActive(true);
+
+       //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Cross the right crosswalk.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Tumawid sa tamang tawiran.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
     //Question 9
@@ -228,6 +383,11 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
         question10Screen.SetActive(true);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
+
     }
 
     public void question9Choice2(){
@@ -235,6 +395,21 @@ public class Map_3 : MonoBehaviour
         HideAllScreen();
         wrongSound.Play();
         question10Screen.SetActive(true);
+
+       //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Help it to cross safely.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Tulungan ito para makatawid ng ligtas.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
     //Question 10
@@ -245,12 +420,32 @@ public class Map_3 : MonoBehaviour
         PlayerPrefs.SetInt("playerScore", score);
         scoreText.text = "Points: "+score;
         SceneManager.LoadScene(whichMap);
+
+        //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        correctAnswerPanel.SetActive(true);
+
     }
 
     public void question10Choice2(){
         PlayerPrefs.SetString("questionCorrect", "2");
         wrongSound.Play();
         SceneManager.LoadScene(whichMap);
+
+       //Hide Correct and Wrong Panel
+        HideCorrectAndSorryPanel();
+        wrongAnswerPanel.SetActive(true);
+        
+        if(language == "english"){
+            string _concat = "The correct answer is ";
+            correctText.text = _concat+"Wake up the passenger so he doesn't get too far from his destination.";
+        }
+        else{
+            string _concat = "Ang tamang sagot ay ";
+            correctText.text = _concat+"Gisingin ang pasahero para hindi na mapalayo sa kanyang pupuntahan.";
+        }
+        //End Correct and Wrong Panel
+
     }
 
 
@@ -366,5 +561,12 @@ public class Map_3 : MonoBehaviour
         bg1.SetActive(false);
         bg2.SetActive(false);
         bg3.SetActive(false);
+    }
+
+    //Hide Great and Sorry Panel
+    public void HideCorrectAndSorryPanel()
+    {
+        wrongAnswerPanel.SetActive(false);
+        correctAnswerPanel.SetActive(false);
     }
 }
