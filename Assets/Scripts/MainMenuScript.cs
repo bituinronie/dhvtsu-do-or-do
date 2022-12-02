@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
 
     public string language  = "english";
 
+    public string whichMap = "StoryLine";
     // Start is called before the first frame update
     void Start()
     {
@@ -61,28 +62,31 @@ public class MainMenuScript : MonoBehaviour
     public void SelectCharacterMale1(){
         PlayerPrefs.SetString("playerCharacter", "maleCharacter1");
         clickSound.Play();
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene(whichMap);
     }
 
     public void SelectCharacterMale2(){
         PlayerPrefs.SetString("playerCharacter", "maleCharacter2");
         clickSound.Play();
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene(whichMap);
     }
 
     public void SelectCharacterFemale1(){
         PlayerPrefs.SetString("playerCharacter", "femaleCharacter1");
         clickSound.Play();
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene(whichMap);
     }
 
     public void SelectCharacterFemale2(){
         PlayerPrefs.SetString("playerCharacter", "femaleCharacter2");
         clickSound.Play();
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene(whichMap);
     }
 
-
+    //Load Game
+    public void LoadGame(){
+        SceneManager.LoadScene("MapSelection");
+    }
 
 
     //Hide All Screen

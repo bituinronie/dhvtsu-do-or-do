@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33505939a8ba4f75b50ed62b3e9d3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichScene: MainMenu
+  whichScene: MapSelection
 --- !u!1 &991589296
 GameObject:
   m_ObjectHideFlags: 0
@@ -8883,7 +8883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Return to Menu
+  m_Text: Return to Map Selection
 --- !u!222 &2084005082
 CanvasRenderer:
   m_ObjectHideFlags: 0

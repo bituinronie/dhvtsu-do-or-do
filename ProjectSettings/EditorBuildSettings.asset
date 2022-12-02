@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryLine.unity
     guid: 6f2ba7ff6b1f74c90a95dd23f110c4e5
+  - enabled: 1
+    path: Assets/Scenes/MapSelection.unity
+    guid: 57ad4db3fea284a089281da5c50739c6
   m_configObjects: {}
