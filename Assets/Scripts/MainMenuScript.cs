@@ -139,4 +139,10 @@ public class MainMenuScript : MonoBehaviour
             selectCharacterText.text = "Pindutin ang karakter na natipuhan";
         }
     }
+
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
