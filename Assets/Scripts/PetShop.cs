@@ -18,7 +18,7 @@ public class PetShop : MonoBehaviour
 
     public void ptShop()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MiniGameDog");
     }
  public void PlayGame() {
         SceneManager.LoadScene("PlayMenu");

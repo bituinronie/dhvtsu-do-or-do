@@ -509,7 +509,7 @@ public class Map_1 : MonoBehaviour
             choice3AText.text = "A. Magpanggap na walang naririnig";
             choice3BText.text = "B. Magtitimpla ng kape";     
 
-            question4Text.text = "Abalang gumagawa ng gawaing bahay ang iyong ina habang ikaw ay naglalaro sa iyong cellphone (PA-ITALIC PO ANG CELLPHONE. Tinawag ka niya upang bumili ng mga sangkap para sa kaniyang lulutuing tanghalian. Ano sa tingin mo ang wastong tugon?";
+            question4Text.text = "Abalang gumagawa ng gawaing bahay ang iyong ina habang ikaw ay naglalaro sa iyong cellphone. Tinawag ka niya upang bumili ng mga sangkap para sa kaniyang lulutuing tanghalian. Ano sa tingin mo ang wastong tugon?";
             choice4AText.text = "A. Magdabog dahil ikaw ay abala sa iyong laro.";
             choice4BText.text = "B. Iwan muna ang laro at sumunod sa utos ng iyong ina.";     
 

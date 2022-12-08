@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject languageSelectionScreen, mainMenuScreen, menuOptionsScreen, quitScreen, playerNameScreen, levelSelectionScreen, proceedText, selectCharacterScreen;
@@ -141,8 +142,14 @@ public class MainMenuScript : MonoBehaviour
     }
 
 
-    public void quitGame()
+   public Image ConfirmPanelBackground;
+
+    public void QuitApplication()
     {
+     #if     UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+    #else
         Application.Quit();
+     #endif
     }
 }

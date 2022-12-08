@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class PetShopScript : MonoBehaviour
 {
+    	public static PetShopScript instance;
+     void Awake() {
+        Time.timeScale = 1f;
+
+        if (instance == null) {
+            instance = this;
+        }
+    }
     int points;
     public GameObject birdPlayButton, birdPanel, puppyPlayButton, puppyPanel;
     public Text pointText;
