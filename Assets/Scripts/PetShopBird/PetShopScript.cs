@@ -33,7 +33,7 @@ public class PetShopScript : MonoBehaviour
     void Update()
     {   
         // if score below than 20 then dont shot play button
-        if(points < 20)
+        if(points < 100)
         {
             birdPanel.SetActive(true);
         }
@@ -43,7 +43,7 @@ public class PetShopScript : MonoBehaviour
         }
 
         // if score below than 50 then dont shot play button
-        if(points < 50)
+        if(points < 300)
         {
             puppyPanel.SetActive(true);
         }
